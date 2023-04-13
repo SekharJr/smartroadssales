@@ -158,7 +158,7 @@ class _newloginState extends State<newlogin> {
                     ),
                   ),
                   Text(
-                    "  Or continue with  ",
+                    "  Or  google ",
                     style: TextStyle(color: Colors.black),
                   ),
                   Expanded(
