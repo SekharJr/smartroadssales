@@ -11,5 +11,14 @@ class sharedpref{
     String? value=await prefs.getString(key);
     return value!;
   }
-  
+  void savebool(String key,bool value)async{
+    final SharedPreferences prefs=await SharedPreferences.getInstance();
+    await prefs.setBool(key, value);
+  }
+  Future<bool>getbool(String key)async{
+    final SharedPreferences prefs=await SharedPreferences.getInstance();
+    bool? value=await prefs.getBool(key);
+    return value ?? false;
+  }
 }
+

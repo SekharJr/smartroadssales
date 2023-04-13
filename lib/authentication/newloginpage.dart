@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smartroadsales/Utilities/constants.dart';
 
 import '../home/newhomepage.dart';
 import '../home/smarthome.dart';
@@ -15,6 +17,7 @@ class newlogin extends StatefulWidget {
 class _newloginState extends State<newlogin> {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +139,9 @@ class _newloginState extends State<newlogin> {
                   ),
                 ),
               ),
-              onTap: (){
+              onTap: ()async{
+                final SharedPreferences obj= await SharedPreferences.getInstance();
+                obj.setBool(Constants.islogin, true);
                 Navigator.push(context, PageTransition(child: smarthome(), type: PageTransitionType.topToBottom));
               },
              

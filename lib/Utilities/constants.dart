@@ -1,3 +1,4 @@
 class Constants{
-  static final password="Password";
+  static final String password="Password";
+  static final String islogin="islogin";
 }
