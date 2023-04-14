@@ -18,6 +18,7 @@ class _smarthomeState extends State<smarthome> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.teal.shade200,
+        
         child: ListView(
           children: [
             SizedBox(
@@ -62,23 +63,87 @@ class _smarthomeState extends State<smarthome> {
           ],
         ),
       ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    floatingActionButton: FloatingActionButton(
+
+      onPressed: (){},
+    tooltip: 'Increment',
+    child: Icon(Icons.add),
+      backgroundColor: Colors.blue.shade800,
+    ),
+      bottomNavigationBar: BottomAppBar(
+
+        clipBehavior: Clip.antiAlias,
+        shape: CircularNotchedRectangle(),
+        notchMargin: 5,
+        color: Theme.of(context).primaryColor.withAlpha(0),
+        elevation: 0,
+
+        child: BottomNavigationBar(
+          currentIndex: 3,
+          elevation: 0,
+          backgroundColor: Colors.teal.shade200,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.store_mall_directory_outlined),label: "Store"),
+            BottomNavigationBarItem(icon: Icon(Icons.search),label: "Search"),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline_outlined),label: "Account"),
+
+          ],
+        ),
+
+
+      ),
       body: Container(
         padding: EdgeInsets.all(6),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              height: 80,
+              width: 400,
+              margin: EdgeInsets.only(top: 80),
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),color:Colors.teal.shade200
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 20,
+                      width: 90,
+                      alignment:Alignment.center,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white),
+                      child: Text("Store Name:")),
+                  Container( height: 20,
+                      width: 90,
+                      alignment:Alignment.center,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.white),
+                      child: Text("Credit Point:"))
+                ],
+              ),
+            ),
+            
             Expanded(
               child: GridView.extent(
                 maxCrossAxisExtent: 200.0,
                 children: [
+
+
                   Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     child: Container(
-                      height: 80,
+                      height: 100,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -86,10 +151,10 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.freepnglogos.com/uploads/women-bag-png/women-bag-png-transparent-images-download-clip-6.png",
-                            height: 150,
-                            width: 150,
+                          Image.asset(
+                            ("assets/images/women-bag-png-transparent-images-download-clip-6.png"),
+                            height: 120,
+                            width: 120,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,7 +193,7 @@ class _smarthomeState extends State<smarthome> {
                       height: 80,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -136,10 +201,10 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
+                          Image.asset(
+                            ("assets/images/Bag-PNG-Image-File.png"),
+                            height: 120,
+                            width: 120,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -170,15 +235,16 @@ class _smarthomeState extends State<smarthome> {
                       ),
                     ),
                   ),
+
                   Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     child: Container(
-                      height: 80,
+                      height: 100,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -186,11 +252,36 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.freepnglogos.com/uploads/women-bag-png/women-bag-png-transparent-images-download-clip-6.png",
-                            height: 150,
-                            width: 150,
+                          Image.asset(
+                            ("assets/images/women-bag-png-transparent-images-download-clip-6.png"),
+                            height: 120,
+                            width: 120,
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Leather Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2999.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.5"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
                         ],
                       ),
                     ),
@@ -203,7 +294,7 @@ class _smarthomeState extends State<smarthome> {
                       height: 80,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -211,11 +302,87 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
+                          Image.asset(
+                            ("assets/images/Bag-PNG-Image-File.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Travel Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2499.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.3"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Container(
+                      height: 100,
+                      width: 400,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 16, right: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ("assets/images/women-bag-png-transparent-images-download-clip-6.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Leather Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2999.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.5"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
                         ],
                       ),
                     ),
@@ -228,7 +395,7 @@ class _smarthomeState extends State<smarthome> {
                       height: 80,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -236,11 +403,88 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
+                          Image.asset(
+                            ("assets/images/Bag-PNG-Image-File.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Travel Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2499.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.3"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
+                        ],
+                      ),
+                    ),
+                  ),
+
+
+                  Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Container(
+                      height: 100,
+                      width: 400,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 16, right: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ("assets/images/women-bag-png-transparent-images-download-clip-6.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Leather Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2999.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.5"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
                         ],
                       ),
                     ),
@@ -253,7 +497,7 @@ class _smarthomeState extends State<smarthome> {
                       height: 80,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -261,11 +505,88 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
+                          Image.asset(
+                            ("assets/images/Bag-PNG-Image-File.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Travel Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2499.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.3"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
+                        ],
+                      ),
+                    ),
+                  ),
+
+
+                  Card(
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Container(
+                      height: 100,
+                      width: 400,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 16, right: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ("assets/images/women-bag-png-transparent-images-download-clip-6.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Leather Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2999.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.5"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
                         ],
                       ),
                     ),
@@ -278,7 +599,7 @@ class _smarthomeState extends State<smarthome> {
                       height: 80,
                       width: 400,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
+                      padding: EdgeInsets.only(left: 16, right: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
@@ -286,115 +607,45 @@ class _smarthomeState extends State<smarthome> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
+                          Image.asset(
+                            ("assets/images/Bag-PNG-Image-File.png"),
+                            height: 120,
+                            width: 120,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Travel Bag",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                "2499.99",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("4.3"),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.yellow,
+                                  size: 16,
+                                ),
+                              ])
                         ],
                       ),
                     ),
                   ),
-                  Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Container(
-                      height: 80,
-                      width: 400,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Container(
-                      height: 80,
-                      width: 400,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Container(
-                      height: 80,
-                      width: 400,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Container(
-                      height: 80,
-                      width: 400,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.only(left: 8, right: 8),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            "https://www.pngall.com/wp-content/uploads/2/Bag-PNG-Image-File.png",
-                            height: 150,
-                            width: 150,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+
+
+
+
+
                 ],
               ),
             ),
